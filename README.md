@@ -204,9 +204,7 @@ The code detects at runtime whether it's running on Kaggle (checks `/kaggle/inpu
 For academic inquiries, peer reviews, or collaboration regarding the methodologies used in this study, please reach out to:  
 
 **Rananjay Singh Chauhan**  
-✉️ **Email:** - [rjchauhan.work@gmail.com](mailto:rjchauhan.work@gmail.com) 
-- [rananjaychauhan93@gmail.com](mailto:rananjaychauhan93@gmail.com) 
-- [rananjay.23bai10080@vitbhopal.ac.in](mailto:rananjay.23bai10080@vitbhopal.ac.in) 
+✉️ **Email:**  [rjchauhan.work@gmail.com](mailto:rjchauhan.work@gmail.com) | [rananjaychauhan93@gmail.com](mailto:rananjaychauhan93@gmail.com) | [rananjay.23bai10080@vitbhopal.ac.in](mailto:rananjay.23bai10080@vitbhopal.ac.in) 
 
 🔗 **LinkedIn:** [linkedin.com/in/maihun-rsc](https://www.linkedin.com/in/maihun-rsc/) 
 
