@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.class
+
+# Environments
+.env
+.venv
+
+# Project Specific
+data/raw/
+data/processed/
+logs/warnings_and_errors.log
+seen_ids.txt
+
+# Future Sprint Modules (Ignored for GitHub sync)
+preprocessing/
+models/
+evaluation/
+analysis/
+webapp/
+
+# Scripts & Notes
+test_pipeline.py
+context.md

@@ -1,0 +1,69 @@
+# ═══════════════════════════════════════════════════════════════
+# model_config.yaml
+# All hyperparameters, label maps, and pipeline settings.
+# Loaded by main.py and passed into modules that need it.
+# ═══════════════════════════════════════════════════════════════
+
+model:
+  encoder: roberta-base
+  num_labels: 4
+  label_map:
+    0: Supportive
+    1: Critical
+    2: Neutral-Reporting
+    3: Alarmist
+  dropout: 0.1
+  max_seq_len: 512
+  freeze_base_epochs: 1       # freeze encoder for first N epochs
+
+training:
+  batch_size_gpu: 16
+  batch_size_cpu: 4
+  learning_rate: 2.0e-5
+  warmup_ratio: 0.1
+  weight_decay: 0.01
+  max_epochs: 5
+  gradient_clip: 1.0
+  seed: 42
+  early_stopping_patience: 2
+  fp16: true                  # mixed precision — auto-disabled on CPU
+
+data:
+  outlets:
+    - bbc
+    - cnn
+    - fox
+    - ani
+    - rt
+    - abc
+    - timesnow
+    - wion
+    - firstpost
+  topics:
+    - politics
+    - economy
+    - conflict
+    - climate
+    - crime
+    - elections
+  min_body_chars: 150
+  max_articles_per_outlet: 500
+  train_split: 0.70
+  val_split: 0.10
+  test_split: 0.20
+
+collection:
+  request_timeout: 15
+  max_retries: 3
+  retry_backoff: 2.0
+  rate_limit_delay: 0.8
+  fallback_max: 300
+
+evaluation:
+  primary_metric: macro_f1
+  report_per_class: true
+  significance_alpha: 0.05
+
+logging:
+  level: INFO
+  save_logs: true

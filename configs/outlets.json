@@ -1,0 +1,170 @@
+{
+  "outlets": [
+    {
+      "name": "bbc",
+      "display": "BBC News",
+      "home": "https://www.bbc.com/news",
+      "rss_feeds": [
+        "http://feeds.bbci.co.uk/news/rss.xml",
+        "http://feeds.bbci.co.uk/news/world/rss.xml",
+        "http://feeds.bbci.co.uk/news/politics/rss.xml",
+        "http://feeds.bbci.co.uk/news/business/rss.xml"
+      ],
+      "strategy": "rss_first",
+      "region": "UK",
+      "type": "public_broadcaster",
+      "topics_from_rss": true,
+      "fallback": "ccnews"
+    },
+    {
+      "name": "cnn",
+      "display": "CNN",
+      "home": "https://edition.cnn.com",
+      "rss_feeds": [
+        "http://rss.cnn.com/rss/edition.rss",
+        "http://rss.cnn.com/rss/edition_world.rss",
+        "http://rss.cnn.com/rss/edition_us.rss",
+        "http://rss.cnn.com/rss/money_news_international.rss"
+      ],
+      "strategy": "rss_first",
+      "region": "USA",
+      "type": "cable_news",
+      "topics_from_rss": true,
+      "fallback": "ccnews"
+    },
+    {
+      "name": "fox",
+      "display": "Fox News",
+      "home": "https://www.foxnews.com",
+      "rss_feeds": [
+        "https://moxie.foxnews.com/google-publisher/latest.xml",
+        "https://moxie.foxnews.com/google-publisher/politics.xml",
+        "https://moxie.foxnews.com/google-publisher/world.xml"
+      ],
+      "strategy": "rss_first",
+      "region": "USA",
+      "type": "cable_news",
+      "topics_from_rss": true,
+      "fallback": "ccnews",
+      "notes": "Full text often blocked; RSS summary used as body fallback"
+    },
+    {
+      "name": "thehindu",
+      "display": "The Hindu",
+      "home": "https://www.thehindu.com",
+      "rss_feeds": [
+        "https://www.thehindu.com/news/national/feeder/default.rss",
+        "https://www.thehindu.com/news/international/feeder/default.rss"
+      ],
+      "strategy": "rss_first",
+      "region": "India",
+      "type": "newspaper",
+      "topics_from_rss": true,
+      "fallback": "ccnews"
+    },
+    {
+      "name": "rt",
+      "display": "RT (Russia Today)",
+      "home": "https://www.rt.com",
+      "rss_feeds": [
+        "https://www.rt.com/rss/news/",
+        "https://www.rt.com/rss/politics/",
+        "https://www.rt.com/rss/russia/"
+      ],
+      "strategy": "rss_first",
+      "region": "Russia",
+      "type": "state_affiliated",
+      "topics_from_rss": true,
+      "fallback": "ccnews",
+      "notes": "May be geo-blocked; fallback likely required"
+    },
+    {
+      "name": "abc",
+      "display": "ABC News",
+      "home": "https://abcnews.go.com",
+      "rss_feeds": [
+        "https://feeds.abcnews.com/abcnews/topstories",
+        "https://feeds.abcnews.com/abcnews/internationalheadlines",
+        "https://feeds.abcnews.com/abcnews/politicsheadlines"
+      ],
+      "strategy": "rss_first",
+      "region": "USA",
+      "type": "broadcast",
+      "topics_from_rss": true,
+      "fallback": "ccnews"
+    },
+    {
+      "name": "indianexpress",
+      "display": "The Indian Express",
+      "home": "https://indianexpress.com",
+      "rss_feeds": [
+        "https://indianexpress.com/section/india/feed/",
+        "https://indianexpress.com/section/world/feed/"
+      ],
+      "strategy": "rss_first",
+      "region": "India",
+      "type": "newspaper",
+      "topics_from_rss": true,
+      "fallback": "ccnews"
+    },
+    {
+      "name": "thewire",
+      "display": "The Wire",
+      "home": "https://thewire.in",
+      "rss_feeds": [
+        "https://thewire.in/rss"
+      ],
+      "strategy": "rss_first",
+      "region": "India",
+      "type": "digital",
+      "topics_from_rss": true,
+      "fallback": "ccnews"
+    },
+    {
+      "name": "timesnow",
+      "display": "Times Now",
+      "home": "https://www.timesnownews.com",
+      "rss_feeds": [
+        "https://www.timesnownews.com/feeds/gns-en-top-stories",
+        "https://www.timesnownews.com/feeds/gns-en-latest",
+        "https://www.timesnownews.com/feeds/gns"
+      ],
+      "strategy": "rss_first",
+      "region": "India",
+      "type": "tv_news",
+      "topics_from_rss": true,
+      "fallback": "mind"
+    },
+    {
+      "name": "firstpost",
+      "display": "Firstpost",
+      "home": "https://www.firstpost.com",
+      "rss_feeds": [
+        "https://www.firstpost.com/rss/india.xml",
+        "https://www.firstpost.com/rss/world.xml",
+        "https://www.firstpost.com/rss/politics.xml"
+      ],
+      "strategy": "rss_first",
+      "region": "India",
+      "type": "digital",
+      "topics_from_rss": true,
+      "fallback": "custom",
+      "fallback_dataset": "Kieling/Police-News"
+    }
+  ],
+
+  "topic_keywords": {
+    "politics":  ["parliament", "minister", "government", "president", "senate", "policy", "party", "diplomat", "cabinet"],
+    "economy":   ["economy", "gdp", "inflation", "trade", "market", "bank", "stock", "budget", "recession", "growth"],
+    "conflict":  ["war", "attack", "military", "strike", "troops", "ceasefire", "battle", "killed", "missile", "army"],
+    "climate":   ["climate", "emissions", "carbon", "temperature", "drought", "flood", "renewable", "cop", "environment"],
+    "crime":     ["crime", "murder", "arrest", "police", "court", "verdict", "sentence", "fraud", "corruption"],
+    "elections": ["election", "ballot", "candidate", "campaign", "poll", "vote", "constituency", "referendum"]
+  },
+
+  "user_agents": [
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15",
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+  ]
+}

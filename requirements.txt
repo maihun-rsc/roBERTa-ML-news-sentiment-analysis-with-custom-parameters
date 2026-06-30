@@ -1,0 +1,67 @@
+# ═══════════════════════════════════════════════════════════════
+# News Sentiment Analysis — requirements.txt
+# Dual-environment: Antigravity IDE (local GPU) + Kaggle (T4/P100)
+#
+# INSTALL ORDER MATTERS:
+#   1. pip install torch  (or use pre-installed Kaggle version)
+#   2. pip install -r requirements.txt
+#
+# GPU NOTE:
+#   If CUDA is available, torch auto-uses it — no flag needed.
+#   The env_config.py detects and sets cfg.device accordingly.
+# ═══════════════════════════════════════════════════════════════
+
+# ── Core HTTP & scraping ────────────────────────────────────────
+requests>=2.31.0,<3.0
+feedparser==6.0.12
+newspaper3k==0.2.8
+lxml>=4.9.3                # newspaper3k XML parser backend
+Pillow>=10.0.0             # newspaper3k image handling (we skip images but dep exists)
+nltk>=3.8.1                # newspaper3k sentence tokenizer
+
+# ── Data handling ───────────────────────────────────────────────
+datasets>=2.18.0           # HuggingFace datasets (MIND, CC-News, SemEval fallbacks)
+pandas>=2.1.0
+numpy>=1.26.0
+
+# ── NLP — spaCy (Module 2) ──────────────────────────────────────
+spacy>=3.7.0,<4.0
+# After install, run:
+#   python -m spacy download en_core_web_trf
+
+# ── Transformers & torch (Module 3) ────────────────────────────
+transformers>=4.39.0
+tokenizers>=0.15.0
+accelerate>=0.28.0         # HF Trainer acceleration
+
+# PyTorch — install the right variant for your hardware:
+#   CPU only:
+#     pip install torch==2.2.2 torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+#   CUDA 12.1 (Antigravity / most local GPUs):
+#     pip install torch==2.2.2 torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+#   Kaggle has torch pre-installed — do NOT reinstall, just use it.
+
+# ── ML baselines (Module 3) ─────────────────────────────────────
+scikit-learn>=1.4.0
+
+# ── Evaluation & stats (Module 4) ──────────────────────────────
+scipy>=1.12.0
+statsmodels>=0.14.0
+
+# ── Visualisation (Module 5) ───────────────────────────────────
+matplotlib>=3.8.0
+seaborn>=0.13.0
+
+# ── Utilities ───────────────────────────────────────────────────
+tqdm>=4.66.0               # progress bars
+python-dotenv>=1.0.0       # .env file support for API keys
+pyyaml>=6.0.1              # model_config.yaml parsing
+filelock>=3.13.0           # safe concurrent file writes
+fastapi>=0.100.0           # High-performance web backend
+uvicorn>=0.22.0            # ASGI server for FastAPI
+
+# ── ASR (Module 2 — Whisper) ────────────────────────────────────
+openai-whisper>=20231117   # requires ffmpeg on system
+# Install ffmpeg separately:
+#   Ubuntu/Kaggle: apt-get install -y ffmpeg
+#   macOS: brew install ffmpeg
