@@ -205,9 +205,11 @@ For academic inquiries, peer reviews, or collaboration regarding the methodologi
 
 **Rananjay Singh Chauhan**  
 ✉️ **Email:** 
-- [rjchauhan.work@gmail.com](mailto:rjchauhan.work@gmail.com) |
-- [rananjaychauhan93@gmail.com](mailto:rananjaychauhan93@gmail.com) |
-- [rananjay.23bai10080@vitbhopal.ac.in](mailto:rananjay.23bai10080@vitbhopal.ac.in) |
-🔗 **LinkedIn:** [linkedin.com/in/maihun-rsc](https://www.linkedin.com/in/maihun-rsc/)  
+- [rjchauhan.work@gmail.com](mailto:rjchauhan.work@gmail.com) 
+- [rananjaychauhan93@gmail.com](mailto:rananjaychauhan93@gmail.com) 
+- [rananjay.23bai10080@vitbhopal.ac.in](mailto:rananjay.23bai10080@vitbhopal.ac.in) 
+
+🔗 **LinkedIn:** [linkedin.com/in/maihun-rsc](https://www.linkedin.com/in/maihun-rsc/) 
+
 💻 **GitHub:** [github.com/maihun-rsc](https://github.com/maihun-rsc)  
 
