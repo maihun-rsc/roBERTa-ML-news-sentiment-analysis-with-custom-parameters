@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Framing Analysis Console</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-layout">
+        <!-- Sidebar / Input Area -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-mark"></div>
+                <h1>FRAMING<span>_AI</span></h1>
+            </div>
+            
+            <p class="sidebar-desc">Entity-Centric Zero-Shot Sentiment Analysis Console</p>
+
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="url-mode">URL Mode</button>
+                <button class="tab-btn" data-tab="text-mode">Raw Text</button>
+            </div>
+
+            <form id="analyze-form" class="control-panel">
+                <!-- URL Mode Inputs -->
+                <div id="url-mode" class="tab-content active">
+                    <div class="input-group">
+                        <label for="url">Article URL</label>
+                        <input type="url" id="url" name="url" placeholder="https://www.reuters.com/...">
+                    </div>
+                </div>
+
+                <!-- Text Mode Inputs -->
+                <div id="text-mode" class="tab-content hidden">
+                    <div class="input-group">
+                        <label for="raw_text">Paste Article Text</label>
+                        <textarea id="raw_text" name="raw_text" placeholder="Paste full article text here..." rows="5"></textarea>
+                    </div>
+                    <div class="input-group">
+                        <label for="outlet">News Outlet Name (Optional)</label>
+                        <input type="text" id="outlet" name="outlet" placeholder="e.g. CNN, Fox News">
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label for="entity">Target Entity <span class="optional-badge">(Optional: Auto-Detect)</span></label>
+                    <input type="text" id="entity" name="entity" placeholder="Leave blank for Auto-NER">
+                </div>
+
+                <div class="engine-info">
+                    <span>Inference Engine:</span> <code id="engine-display">facebook/bart-large-mnli (Zero-Shot Fallback)</code>
+                </div>
+
+                <button type="submit" id="submit-btn" class="primary-btn">
+                    <span class="btn-text">Execute Analysis</span>
+                    <span class="loader hidden"></span>
+                </button>
+            </form>
+        </aside>
+
+        <!-- Main Analytics Area -->
+        <main class="analytics-area">
+            <header class="top-nav">
+                <span class="status-indicator">
+                    <span class="dot"></span> System Online
+                </span>
+            </header>
+
+            <div id="welcome-state" class="empty-state">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                </svg>
+                <h2>Awaiting Input</h2>
+                <p>Enter a URL and Target Entity to initiate framing analysis.</p>
+            </div>
+
+            <div id="results-panel" class="results-panel hidden">
+                <div class="results-header">
+                    <h2>Analysis Report</h2>
+                    <h3 id="res-title">...</h3>
+                </div>
+                
+                <div class="content-grid">
+                    <div class="context-card">
+                        <div class="card-header">
+                            <h4>Extracted Context Window</h4>
+                            <span class="badge">1024 Tokens</span>
+                        </div>
+                        <p id="res-context">...</p>
+                    </div>
+
+                    <div class="metrics-card">
+                        <div class="card-header">
+                            <h4>Framing Distribution</h4>
+                        </div>
+                        <div class="bars-container" id="bars-container">
+                            <!-- Bars dynamic injection -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div id="error-message" class="error-toast hidden"></div>
+    <script src="/static/app.js"></script>
+</body>
+</html>

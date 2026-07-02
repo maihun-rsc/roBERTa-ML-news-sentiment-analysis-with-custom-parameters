@@ -8,16 +8,22 @@ __pycache__/
 .venv
 
 # Project Specific
-data/raw/
-data/processed/
-logs/warnings_and_errors.log
+data/
+logs/
 seen_ids.txt
+debug.html
+*.docx
+image.png
+docx_content.txt
+~$*
 
 # Future Sprint Modules (Ignored for GitHub sync)
-models/
-evaluation/
-analysis/
-webapp/
+test_suite/
+webapp_ensemble/
+auto_commit.py
+check_gpu.py
+demo.py
+editor.py
 
 # Scripts & Notes
 test_pipeline.py
