@@ -17,14 +17,8 @@ image.png
 docx_content.txt
 ~$*
 
-# Future Sprint Modules (Ignored for GitHub sync)
-test_suite/
-webapp_ensemble/
-auto_commit.py
-check_gpu.py
+# Scripts & Notes (Ignored for GitHub sync)
 demo.py
 editor.py
-
-# Scripts & Notes
 test_pipeline.py
 context.md
